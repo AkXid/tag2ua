@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag2UA | Allgemeine Geschäftsbedingungen (AGB)</title>
+    <meta name="description"
+        content="Allgemeine Geschäftsbedingungen von Tag2UA für die Erstellung und Bearbeitung barrierefreier Dokumente (PDF/UA).">
+    <meta name="keywords" content="AGB, Geschäftsbedingungen, Tag2UA, PDF/UA Service, Vertragsbedingungen">
+    <meta property="og:title" content="Tag2UA | Allgemeine Geschäftsbedingungen (AGB)">
+    <meta property="og:description" content="Die Vertragsgrundlagen für unsere Zusammenarbeit bei Tag2UA.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0055aa;
+            --primary-dark: #003366;
+            --accent: #72c1e0;
+            --bg: #f4f7f9;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-light: #555;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --accent-glow: rgba(0, 85, 170, 0.15);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Urbanist', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header: Premium Glassmorphism (Synced with index.html) --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1400px;
+            height: 90px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            top: 0;
+            width: 100%;
+            border-radius: 0;
+            height: 75px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            padding: 0 40px;
+        }
+
+        .header-left {
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 300px;
+            /* Big overlap initial */
+            width: auto;
+            margin-left: -55px;
+            /* Synced value from index */
+            margin-top: -25px;
+            /* Synced value from index */
+            flex-shrink: 0;
+            transition: var(--transition);
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+        }
+
+        header.scrolled .logo-img {
+            height: 180px;
+            /* Smaller in scrolled state */
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+
+        .header-center {
+            flex-grow: 1;
+        }
+
+        .header-right {
+            width: 300px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 100px;
+            padding: 0 20px;
+        }
+
+        .legal-card {
+            background: var(--card-bg);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+
+        .legal-card:hover {
+            box-shadow: 0 30px 60px var(--accent-glow);
+        }
+
+        .badge-agb {
+            display: inline-flex;
+            align-items: center;
+            background: #dcfce7;
+            color: #15803d;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            gap: 10px;
+            border: 1px solid rgba(21, 128, 61, 0.1);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 50px 0 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg);
+            font-weight: 800;
+        }
+
+        p,
+        li {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        .highlight-box {
+            background: var(--bg);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--primary);
+            margin: 40px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .highlight-box h2 {
+            margin-top: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        footer {
+            padding: 20px 8%;
+            background: #0a0e14;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .footer-logo img {
+            height: 150px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 30px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .legal-card {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="header-left">
+            <img src="logo.png" alt="Tag2UA Logo" class="logo-img">
+        </div>
+        <div class="header-center"></div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Zurück zur Startseite</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legal-card">
+            <div class="badge-agb"><i class="fas fa-file-contract"></i> Geschäftsbedingungen</div>
+            <h1>Allgemeine Geschäftsbedingungen</h1>
+
+            <p>Stand: Februar 2026</p>
+
+            <h2>1. Geltungsbereich</h2>
+            <p>Diese Allgemeinen Geschäftsbedingungen (AGB) gelten für alle Verträge zwischen Tag2UA (nachfolgend
+                „Dienstleister“) und seinen Kunden (nachfolgend „Auftraggeber“) über die Erstellung, Prüfung und
+                Bearbeitung von barrierefreien Dokumenten (PDF/UA-Remediation).</p>
+
+            <h2>2. Vertragsschluss</h2>
+            <p>Ein Vertrag kommt zustande, wenn der Auftraggeber ein schriftliches Angebot des Dienstleisters per E-Mail
+                oder in sonstiger Textform bestätigt. Die Zusendung von Dokumenten zur bloßen Analyse stellt noch keinen
+                Auftrag dar.</p>
+
+            <h2>3. Leistungen</h2>
+            <p>Der Dienstleister erbringt Leistungen zur Herstellung digitaler Barrierefreiheit nach dem ISO-Standard
+                14289-1 (PDF/UA) sowie der WCAG 2.1/2.2. Der Leistungsumfang umfasst insbesondere:</p>
+            <ul>
+                <li>Manuelle Tag-Strukturierung.</li>
+                <li>Prüfung der Lesereihenfolge und logischen Semantik.</li>
+                <li>Erstellung von Alternativtexten (sofern beauftragt).</li>
+                <li>Abschlussprüfung mittels PAC-Prüfbericht.</li>
+            </ul>
+
+            <h2>4. Mitwirkungspflichten des Auftraggebers</h2>
+            <p>Der Auftraggeber ist verpflichtet, dem Dienstleister alle für die Bearbeitung notwendigen Quelldokumente
+                in einem bearbeitbaren Format oder als hochauflösende PDFs zur Verfügung zu stellen. Verzögerungen durch
+                fehlende Informationen oder fehlerhafte Quelldaten gehen zu Lasten des Auftraggebers.</p>
+
+            <div class="highlight-box">
+                <h2>5. Abnahme und Gewährleistung</h2>
+                <p>Nach Lieferung der bearbeiteten Dokumente hat der Auftraggeber diese innerhalb von 7 Werktagen zu
+                    prüfen. Erfolgt innerhalb dieser Frist keine schriftliche Rüge von Mängeln, gelten die Dokumente als
+                    abgenommen. Mängelrügen müssen konkret unter Bezugnahme auf den PDF/UA-Standard begründet werden.
+                </p>
+            </div>
+
+            <h2>6. Haftung</h2>
+            <p>Der Dienstleister haftet für die fachgerechte Ausführung nach dem aktuellen Stand der Technik. Eine
+                Haftung für mittelbare Schäden, entgangenen Gewinn oder Ansprüche Dritter (z. B. wegen Nichteinhaltung
+                gesetzlicher Fristen wie des BFSG durch den Auftraggeber) ist ausgeschlossen, sofern nicht Vorsatz oder
+                grobe Fahrlässigkeit vorliegt.</p>
+
+            <h2>7. Vertraulichkeit und Datenschutz</h2>
+            <p>Beide Parteien verpflichten sich zur strengsten Vertraulichkeit über alle im Rahmen des Auftrags
+                ausgetauschten Informationen. Die Datenverarbeitung erfolgt gemäß der gesonderten Datenschutzerklärung
+                des Dienstleisters.</p>
+
+            <h2>8. Preise und Zahlungsbedingungen</h2>
+            <p>Alle Preise verstehen sich netto zzgl. der jeweils geltenden gesetzlichen Steuern. Rechnungen sind
+                innerhalb von 14 Tagen nach Rechnungsstellung ohne Abzug zahlbar.</p>
+
+            <h2>9. Schlussbestimmungen</h2>
+            <p>Es gilt das Recht der Bundesrepublik Deutschland unter Ausschluss des UN-Kaufrechts. Sofern der
+                Auftraggeber Kaufmann ist, ist Gerichtsstand der Sitz des Dienstleisters (Spanien) oder wahlweise der
+                Sitz des Auftraggebers.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Tag2UA Logo">
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Startseite</a>
+            <a href="Impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+            <p style="font-size: 0.9rem;">Informationen zugänglich machen &copy; 2026 Tag2UA</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+</body>
+
+</html>

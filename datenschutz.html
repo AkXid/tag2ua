@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag2UA | Datenschutz & Datensicherheit</title>
+    <meta name="description"
+        content="Datenschutzerklärung von Tag2UA. Informationen zum Schutz Ihrer persönlichen Daten und der uns anvertrauten Dokumente gemäß DSGVO und LOPDGDD.">
+    <meta name="keywords" content="Datenschutz, DSGVO, LOPDGDD, Tag2UA, Datensicherheit, PDF/UA">
+    <meta property="og:title" content="Tag2UA | Datenschutz & Datensicherheit">
+    <meta property="og:description"
+        content="Wie wir Ihre Daten schützen. Transparente Informationen zur Datenverarbeitung bei Tag2UA.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0055aa;
+            --primary-dark: #003366;
+            --accent: #72c1e0;
+            --bg: #f4f7f9;
+            --card-bg: #ffffff;
+            --text: #1a1a1a;
+            --text-light: #555;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --accent-glow: rgba(0, 85, 170, 0.15);
+            --success-bg: #ecfdf5;
+            --success-border: #10b981;
+            --success-text: #064e3b;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Urbanist', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Header: Premium Glassmorphism (Synced with index.html) --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1400px;
+            height: 90px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            top: 0;
+            width: 100%;
+            border-radius: 0;
+            height: 75px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            padding: 0 40px;
+        }
+
+        .header-left {
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 300px;
+            /* Big overlap initial */
+            width: auto;
+            margin-left: -55px;
+            /* Synced value from index */
+            margin-top: -25px;
+            /* Synced value from index */
+            flex-shrink: 0;
+            transition: var(--transition);
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+        }
+
+        header.scrolled .logo-img {
+            height: 180px;
+            /* Smaller in scrolled state */
+            margin-left: -15px;
+            margin-top: -15px;
+        }
+
+        .header-center {
+            flex-grow: 1;
+        }
+
+        .header-right {
+            width: 300px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 140px auto 100px;
+            padding: 0 20px;
+        }
+
+        .legal-card {
+            background: var(--card-bg);
+            padding: 60px;
+            border-radius: 30px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.02);
+            transition: var(--transition);
+        }
+
+        .legal-card:hover {
+            box-shadow: 0 30px 60px var(--accent-glow);
+        }
+
+        h1 {
+            color: var(--primary);
+            font-size: clamp(2.2rem, 5vw, 3.2rem);
+            margin-bottom: 30px;
+            font-weight: 900;
+        }
+
+        h2 {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin: 50px 0 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--bg);
+            font-weight: 800;
+        }
+
+        h3 {
+            font-size: 1.4rem;
+            margin: 35px 0 20px;
+            color: var(--text);
+            font-weight: 700;
+        }
+
+        p,
+        li {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 18px;
+        }
+
+        ul {
+            margin-left: 25px;
+            margin-bottom: 25px;
+        }
+
+        .badge-security {
+            display: inline-flex;
+            align-items: center;
+            background: #eef6ff;
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            gap: 10px;
+            border: 1px solid rgba(0, 85, 170, 0.1);
+        }
+
+        .address-box {
+            background: var(--bg);
+            padding: 40px;
+            border-radius: 20px;
+            border-left: 6px solid var(--primary);
+            margin: 35px 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+        }
+
+        .address-box strong {
+            font-size: 1.25rem;
+            color: var(--primary);
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .ai-guard-box {
+            background: var(--success-bg);
+            border: 1px solid var(--success-border);
+            padding: 35px;
+            border-radius: 20px;
+            margin: 40px 0;
+            display: flex;
+            gap: 25px;
+            align-items: flex-start;
+        }
+
+        .ai-guard-box i {
+            font-size: 2.5rem;
+            color: var(--success-border);
+        }
+
+        .ai-guard-box h3 {
+            margin-top: 0;
+            color: var(--success-text);
+        }
+
+        .cookie-box {
+            background: #f0f7ff;
+            border: 1px solid #cce3ff;
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .footer-logo img {
+            height: 150px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 30px;
+        }
+
+        footer {
+            padding: 20px 8%;
+            background: #0a0e14;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            .legal-card {
+                padding: 40px 25px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .ai-guard-box {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="header-left">
+            <img src="logo.png" alt="Tag2UA Logo" class="logo-img">
+        </div>
+        <div class="header-center"></div>
+        <div class="header-right">
+            <nav>
+                <a href="index.html">Zurück zur Startseite</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="legal-card reveal" id="content">
+            <div class="badge-security"><i class="fas fa-shield-alt"></i> DSGVO & LOPDGDD Konform</div>
+            <h1>Datenschutzerklärung</h1>
+
+            <p>Wir bei <strong>Tag2UA</strong> nehmen den Schutz Ihrer persönlichen Daten und der uns anvertrauten
+                Dokumente als höchstes Gut unserer Geschäftsbeziehung wahr. Diese Erklärung erläutert lückenlos, wie wir
+                Daten im Rahmen unserer Tätigkeit in Spanien und der Europäischen Union verarbeiten.</p>
+
+            <h2>1. Verantwortliche Stelle</h2>
+            <p>Verantwortlich für die Datenverarbeitung im Sinne der DSGVO sowie des spanischen Gesetzes <em>Ley
+                    Orgánica 3/2018 (LOPDGDD)</em> ist:</p>
+
+            <div class="address-box">
+                <strong>Tag2UA</strong>
+                Dragan Bena<br>
+                NIF/NIE: X4256683G<br>
+                Calle Bilbao 7<br>
+                03170 Quesada<br>
+                Spanien<br><br>
+                <i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> E-Mail:
+                bena@tag2ua.com<br>
+                <i class="fas fa-globe" style="color: var(--primary); margin-right: 10px;"></i> Webseite: www.tag2ua.com
+            </div>
+
+            <h2>2. Rechtsgrundlagen der Verarbeitung</h2>
+            <p>Die Verarbeitung Ihrer Daten erfolgt auf Basis folgender Rechtsgrundlagen:</p>
+            <ul>
+                <li><strong>Art. 6 Abs. 1 lit. b DSGVO:</strong> Zur Erfüllung vertraglicher Pflichten (PDF-Remediation
+                    & Analyse).</li>
+                <li><strong>Art. 6 Abs. 1 lit. f DSGVO:</strong> Berechtigtes Interesse an der IT-Sicherheit und
+                    stabilen Webseitenfunktion.</li>
+                <li><strong>Art. 6 Abs. 1 lit. c DSGVO:</strong> Rechtliche Verpflichtung zur Aufbewahrung von
+                    Buchhaltungsunterlagen nach spanischem Recht.</li>
+            </ul>
+
+            <h2>3. Datenerfassung auf dieser Webseite</h2>
+            <h3>Server-Log-Dateien</h3>
+            <p>Unser Webserver erfasst bei jedem Aufruf technische Daten (Logfiles), um die Stabilität und Sicherheit
+                der Präsenz zu gewährleisten. Dazu gehören IP-Adresse (anonymisiert), Datum, Uhrzeit und Browsertyp.</p>
+
+            <div class="cookie-box">
+                <i class="fas fa-cookie-bite" style="font-size: 2rem; color: var(--primary);"></i>
+                <div>
+                    <strong style="color: var(--primary); font-size: 1.1rem; display: block; margin-bottom: 5px;">Kein
+                        Tracking, kein Profiling:</strong>
+                    Wir verwenden ausschließlich technisch notwendige Cookies, um die Grundfunktionen der Seite
+                    sicherzustellen. Wir nutzen keine Marketing-Tools von Drittanbietern. Ein Cookie-Banner ist daher
+                    nach aktueller Rechtslage nicht erforderlich.
+                </div>
+            </div>
+
+            <h2>4. Spezifische Sicherheit für PDF/UA-Services</h2>
+            <p>Als spezialisierter Dienstleister verarbeiten wir Dokumente, die oft sensible Unternehmensinhalte
+                enthalten. Wir garantieren Ihnen:</p>
+
+            <div class="ai-guard-box">
+                <i class="fas fa-user-shield"></i>
+                <div>
+                    <h3>KI-Ausschluss-Garantie (Anti-Training)</h3>
+                    <p>Wir garantieren vertraglich, dass keine uns übermittelten Dokumente, Texte oder Metadaten zum
+                        Training von Large Language Models (LLM) oder anderen KI-Systemen verwendet werden. Ihre
+                        Expertise und Ihre Daten verbleiben in einer geschlossenen Infrastruktur.</p>
+                </div>
+            </div>
+
+            <h3>Hosting & Standort</h3>
+            <p>Die Datenverarbeitung erfolgt auf zertifizierten Servern innerhalb der Europäischen Union (Standort
+                Deutschland). Damit gewährleisten wir ein einheitliches Schutzniveau gemäß europäischem Standard,
+                unabhängig von unserem Sitz in Spanien.</p>
+
+            <h3>Löschfristen (Data Lifecycle)</h3>
+            <p>Wir arbeiten nach dem Prinzip der Datensparsamkeit. Alle projektbezogenen Dateien (Quell-PDFs und
+                bearbeitete Dokumente) werden standardmäßig <strong>14 Tage</strong> nach erfolgter Projektabnahme
+                unwiderruflich von unseren aktiven Systemen gelöscht, sofern keine abweichende Vereinbarung getroffen
+                wurde.</p>
+
+            <h2>5. Ihre Rechte als betroffene Person</h2>
+            <p>Sie haben gemäß Art. 15-21 DSGVO jederzeit das Recht auf:</p>
+            <ul>
+                <li>Auskunft über die bei uns gespeicherten Daten.</li>
+                <li>Berichtigung unrichtiger Daten.</li>
+                <li>Löschung Ihrer Daten („Recht auf Vergessenwerden“).</li>
+                <li>Widerspruch gegen die Verarbeitung.</li>
+                <li>Datenübertragbarkeit in einem gängigen Format.</li>
+            </ul>
+
+            <h2>6. Zuständige Aufsichtsbehörde (Spanien)</h2>
+            <p>Aufgrund unseres Unternehmenssitzes in Spanien ist bei Beschwerden die spanische Datenschutzbehörde
+                zuständig:</p>
+            <p>
+                <strong>Agencia Española de Protección de Datos (AEPD)</strong><br>
+                C/ Jorge Juan, 6, 28001 Madrid, Spanien<br>
+                Web: <a href="https://www.aepd.es" target="_blank"
+                    style="color: var(--primary); font-weight: 600;">www.aepd.es</a>
+            </p>
+
+            <h2>7. AV-Vertrag (Art. 28 DSGVO)</h2>
+            <p>Für unsere Geschäftskunden (B2B) stellen wir einen standardisierten Auftragsverarbeitungsvertrag (AVV)
+                bereit, der die technischen und organisatorischen Maßnahmen (TOM) im Detail beschreibt.</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Tag2UA Logo">
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Startseite</a>
+            <a href="Impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+            <p style="font-size: 0.9rem;">Informationen zugänglich machen &copy; 2026 Tag2UA</p>
+            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.4;">Stand der Erklärung: Februar 2026. Erstellt für
+                den Standort Quesada, Spanien.</p>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        window.onload = function () {
+            document.getElementById('content').classList.add('active');
+        };
+    </script>
+</body>
+
+</html>

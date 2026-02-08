@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tag2UA | PDF/UA Excellence & Barrierefreie Dokumente</title>
+    <meta name="description"
+        content="Tag2UA ist Ihr Partner für barrierefreie PDF-Dokumente (PDF/UA). Wir bieten manuelle Tag-Strukturierung, Layout-Optimierung und PAC-Garantie für gesetzliche Konformität.">
+    <meta name="keywords"
+        content="PDF/UA, Barrierefreiheit, PDF barrierefrei machen, BFSG, BITV 2.0, PAC-Check, digitale Teilhabe">
+    <link rel="canonical" href="https://tag2ua.de/">
+    <meta property="og:title" content="Tag2UA | PDF/UA Excellence & Barrierefreie Dokumente">
+    <meta property="og:description"
+        content="Digitale Barrierefreiheit ohne Kompromisse. Wir machen Ihre Dokumente fit für die Zukunft.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tag2ua.de/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0055aa;
+            --primary-dark: #003366;
+            --accent: #72c1e0;
+            --bg: #f4f7f9;
+            --card-bg: rgba(255, 255, 255, 0.8);
+            --text: #1a1a1a;
+            --text-light: #555;
+            --white: #ffffff;
+            --glass: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --accent-glow: rgba(0, 85, 170, 0.15);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Urbanist', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Scroll Margin for Anchor Links --- */
+        section[id] {
+            scroll-margin-top: 100px;
+        }
+
+        /* --- Header: Premium Glassmorphism (Rebuilt from Scratch) --- */
+        header {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1400px;
+            height: 90px;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            top: 0;
+            width: 100%;
+            border-radius: 0;
+            height: 75px;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            padding: 0 40px;
+        }
+
+        .header-left {
+            width: 300px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 300px;
+            /* Big overlap initial */
+            width: auto;
+            margin-left: -55px;
+            margin-top: -25px;
+            /* Lowered from -35px to -25px */
+            flex-shrink: 0;
+            transition: var(--transition);
+            filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.05));
+        }
+
+        header.scrolled .logo-img {
+            height: 180px;
+            /* Smaller in scrolled state */
+            margin-left: -15px;
+            margin-top: -15px;
+            /* Shifted up slightly in scrolled state */
+        }
+
+        .header-center {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .header-right {
+            width: 300px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 100%;
+        }
+
+        .cta-nav {
+            background: var(--primary);
+            color: var(--white) !important;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 85, 170, 0.2);
+        }
+
+        .cta-nav:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 85, 170, 0.3);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 120px 8% 80px;
+            position: relative;
+            background: radial-gradient(circle at 70% 30%, #eef6ff 0%, var(--bg) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 900' preserveAspectRatio='xMidYMid slice'%3E%3Cdefs%3E%3ClinearGradient id='lineGradient' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color: %2372c1e0; stop-opacity: 0.8' /%3E%3Cstop offset='100%25' style='stop-color: %230055aa; stop-opacity: 0.2' /%3E%3C/linearGradient%3E%3C/defs%3E%3Cg fill='none' stroke='url(%23lineGradient)' stroke-width='0.8' stroke-linecap='round'%3E%3Cpolyline points='100,100 300,200 200,400 100,100 400,150 300,200' /%3E%3Cpolyline points='200,400 400,150 500,350 200,400 300,500 500,350' /%3E%3Cpolyline points='500,350 600,100 400,150' /%3E%3Cpolyline points='600,100 700,300 500,350 800,200 600,100' /%3E%3Cpolyline points='700,300 800,200 900,400 700,300 850,100 800,200' /%3E%3Cpolyline points='900,400 1000,250 800,200 1100,450 900,400' /%3E%3Cpolyline points='300,500 500,350 400,600 300,500' /%3E%3Cpolyline points='400,600 500,350 700,300 600,550 400,600' /%3E%3Cpolyline points='600,550 700,300 900,400 800,650 600,550' /%3E%3Cpolyline points='800,650 900,400 1100,450 1000,700 800,650' /%3E%3C/g%3E%3C/svg%3E");
+            background-size: cover;
+            opacity: 0.4;
+            z-index: 0;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            color: var(--primary);
+            z-index: 1;
+        }
+
+        .hero h1 span {
+            display: block;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: clamp(1.1rem, 2vw, 1.4rem);
+            max-width: 800px;
+            color: var(--text-light);
+            margin-bottom: 40px;
+            z-index: 1;
+        }
+
+        .hero .btn-group {
+            display: flex;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .btn {
+            padding: 18px 40px;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: var(--white);
+            box-shadow: 0 10px 20px rgba(0, 85, 170, 0.2);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 85, 170, 0.3);
+        }
+
+        /* --- Stats Section --- */
+        .stats-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: -60px auto 80px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .stat-card {
+            background: var(--white);
+            padding: 40px 20px;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-card h2 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+
+        .stat-card p {
+            font-weight: 600;
+            color: var(--text-light);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+
+        /* --- Vision Section --- */
+        .vision {
+            padding: 120px 8%;
+            background: var(--white);
+            text-align: center;
+        }
+
+        .vision h2 {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 30px;
+            font-weight: 800;
+        }
+
+        .vision p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
+        .vision p strong {
+            color: var(--primary);
+        }
+
+        /* --- Services Section --- */
+        .services {
+            padding: 100px 8%;
+            background: var(--bg);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-header h2 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: var(--white);
+            padding: 45px 35px;
+            border-radius: 30px;
+            border: 1px solid rgba(0, 0, 0, 0.03);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
+        }
+
+        .card i {
+            font-size: 2.8rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 700;
+        }
+
+        .card p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px var(--accent-glow);
+            border-color: var(--accent);
+        }
+
+        /* --- FAQ Section --- */
+        .faq {
+            padding: 120px 8%;
+            background: var(--white);
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--bg);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: var(--transition);
+        }
+
+        .faq-item-header {
+            padding: 25px 35px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.1rem;
+            user-select: none;
+        }
+
+        .faq-item-header i {
+            transition: var(--transition);
+        }
+
+        .faq-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+        }
+
+        .faq-content-inner {
+            padding: 0 35px 30px;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        .faq-item.active {
+            box-shadow: 0 15px 35px var(--accent-glow);
+            border-color: var(--accent);
+            background: var(--white);
+        }
+
+        .faq-item.active .faq-item-header i {
+            transform: rotate(180deg);
+        }
+
+        .faq-item.active .faq-content {
+            max-height: 1000px;
+            transition: max-height 0.8s ease-in-out;
+        }
+
+        /* --- CTA Section --- */
+        .cta {
+            padding: 100px 8%;
+            background: var(--bg);
+        }
+
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 80px 40px;
+            border-radius: 40px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 30px 60px rgba(0, 85, 170, 0.3);
+        }
+
+        .cta-box h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 900;
+        }
+
+        .cta-box p {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 40px;
+        }
+
+        .cta-box .btn-white {
+            background: var(--white);
+            color: var(--primary);
+        }
+
+        .cta-box .btn-white:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 20px 8%;
+            background: #0a0e14;
+            color: rgba(255, 255, 255, 0.6);
+            text-align: center;
+        }
+
+        .footer-logo {
+            margin-bottom: 40px;
+        }
+
+        .footer-logo img {
+            height: 150px;
+            filter: brightness(0) invert(1);
+            margin-bottom: 30px;
+        }
+
+        .footer-nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+        }
+
+        .footer-nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .footer-nav a:hover {
+            opacity: 1;
+            color: var(--accent);
+        }
+
+        .footer-copy {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        .footer-copy strong {
+            color: var(--white);
+        }
+
+        /* --- Back to Top --- */
+        #backToTop {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(0, 85, 170, 0.4);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        #backToTop.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        #backToTop:hover {
+            transform: translateY(-5px);
+            background: var(--primary-dark);
+        }
+
+        /* --- Scroll Reveal --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 1s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 0 20px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 3rem;
+            }
+
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="mainHeader">
+        <div class="header-left">
+            <img src="logo.png" alt="Tag2UA Logo" class="logo-img">
+        </div>
+        <div class="header-center">
+            <nav>
+                <a href="#vision">Vision</a>
+                <a href="#services">Leistungen</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+        </div>
+        <div class="header-right">
+            <a href="#kontakt" class="cta-nav">Analyse anfordern</a>
+        </div>
+    </header>
+
+    <section class="hero reveal">
+        <h1>Informationen sollten keine <br><span>Barrieren kennen.</span></h1>
+        <p>
+            Über <strong>107 Millionen Menschen in Europa</strong> sind auf barrierefreie Dokumente angewiesen.
+            Wir machen Ihre Kommunikation für jeden zugänglich – präzise, sicher und zukunftssicher.
+        </p>
+        <div class="btn-group">
+            <a href="#services" class="btn btn-primary">Unsere Leistungen</a>
+        </div>
+    </section>
+
+    <div class="stats-container reveal">
+        <div class="stats-grid">
+            <div class="stat-card"
+                style="display: flex; flex-direction: column; justify-content: center; padding: 30px;">
+                <p
+                    style="font-size: 1.05rem; line-height: 1.5; color: var(--text); font-style: italic; text-transform: none; letter-spacing: normal; margin-bottom: 15px;">
+                    „Barrierefreiheit ist kein ‚Nice-to-have‘. Es ist ein Muss. Wir müssen Barrierefreiheit als eine
+                    grundlegende menschliche Verantwortung betrachten, nicht nur als eine technische Checkliste.“
+                </p>
+                <p
+                    style="font-size: 0.85rem; color: var(--primary); font-weight: 800; text-transform: none; letter-spacing: 0.5px;">
+                    Satya Nadella, CEO von Microsoft
+                </p>
+            </div>
+            <div class="stat-card"
+                style="display: flex; flex-direction: column; justify-content: center; padding: 30px;">
+                <p
+                    style="font-size: 1.05rem; line-height: 1.5; color: var(--text); font-style: italic; text-transform: none; letter-spacing: normal; margin-bottom: 15px;">
+                    „Für Menschen ohne Behinderung macht Technologie die Dinge einfacher. Für Menschen mit Behinderungen
+                    macht Technologie die Dinge erst möglich.“
+                </p>
+                <p
+                    style="font-size: 0.85rem; color: var(--primary); font-weight: 800; text-transform: none; letter-spacing: 0.5px;">
+                    Mary Pat Radabaugh, ehem. Direktorin IBM National Support Center
+                </p>
+            </div>
+            <div class="stat-card"
+                style="display: flex; flex-direction: column; justify-content: center; padding: 30px;">
+                <p
+                    style="font-size: 1.05rem; line-height: 1.5; color: var(--text); font-style: italic; text-transform: none; letter-spacing: normal; margin-bottom: 15px;">
+                    „Barrierefreie PDFs sind nicht nur für Menschen mit Behinderungen gut – sie verbessern die
+                    Suchmaschinenoptimierung und die allgemeine Benutzererfahrung für alle.“
+                </p>
+                <p
+                    style="font-size: 0.85rem; color: var(--primary); font-weight: 800; text-transform: none; letter-spacing: 0.5px;">
+                    Mark Rogers, Accessibility-Experte
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <section id="vision" class="vision reveal">
+        <h2>Informationen zugänglich machen – seit über 10 Jahren.</h2>
+        <p>
+            „Wir betrachten Information als Grundrecht. Als Ihr Partner für PDF/UA bringen wir über ein Jahrzehnt
+            Erfahrung ein, um technische Präzision mit sozialer Verantwortung zu vereinen.
+            Wir schaffen Dokumente, die für jeden Menschen – ohne Barrieren – lesbar sind.
+            <strong>Unser Versprechen:</strong> Höchste Konformität durch 10+ Jahre Branchen-Expertise und manuelle
+            Qualitätssicherung. Damit Ihre Botschaft wirklich bei jedem ankommt.“
+        </p>
+    </section>
+
+    <section id="services" class="services">
+        <div class="section-header reveal">
+            <h2>Unsere Leistungen</h2>
+        </div>
+        <div class="grid">
+            <div class="card reveal">
+                <i class="fas fa-tags"></i>
+                <h3>Manuelle Tag-Strukturierung</h3>
+                <p>Wir verlassen uns nicht auf fehleranfällige KI-Tools. Wir bauen die logische Baumstruktur (Tags)
+                    Ihrer Dokumente von Grund auf neu auf.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-layer-group"></i>
+                <h3>Komplexe Layout-Optimierung</h3>
+                <p>Mehrspaltige Texte, verschachtelte Listen und komplexe Tabellenstrukturen werden von uns so
+                    aufbereitet, dass sie für Screenreader absolut linear und logisch erfassbar sind.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-image"></i>
+                <h3>Präzise Alternativtexte</h3>
+                <p>Wir verfassen inhaltlich wertvolle Beschreibungen für Bilder und Grafiken, die den Informationsgehalt
+                    exakt wiedergeben.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-wpforms"></i>
+                <h3>Hochkomplexe Formular-Architektur</h3>
+                <p>Die barrierefreie Aufbereitung interaktiver Eingabefelder gilt als Königsdisziplin der
+                    PDF/UA-Erstellung. Wir beherrschen die technologische Tiefe von Tooltips, Tab-Logiken und
+                    Validierungen, damit Ihre Prozesse für jeden verlustfrei bedienbar bleiben.</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-check-circle"></i>
+                <h3>Die PAC-Garantie</h3>
+                <p>Jedes Dokument wird von uns nach dem strengen Matterhorn-Protokoll geprüft. Sie erhalten zu jedem
+                    Projekt einen offiziellen PAC-Prüfbericht (PDF Accessibility Checker).</p>
+            </div>
+            <div class="card reveal">
+                <i class="fas fa-users-cog"></i>
+                <h3>Consulting für Fachabteilungen</h3>
+                <p>Wir beraten Ihre Grafik- und Marketingteams, wie Dokumente bereits in der Erstellung (InDesign/Word)
+                    barrierefrei vorbereitet werden können.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="faq">
+        <div class="faq-container">
+            <div class="faq-header reveal">
+                <h2>Fragen & Antworten</h2>
+                <p style="color: var(--text-light); margin-top: 15px;">Digitale Barrierefreiheit wirkt oft komplex. Wir
+                    haben die häufigsten Fragen unserer Kunden gesammelt, um Ihnen den Weg zum gesetzeskonformen
+                    PDF/UA-Standard zu erleichtern.</p>
+            </div>
+
+            <div class="faq-list reveal">
+                <div class="faq-item">
+                    <div class="faq-item-header">Bin ich gesetzlich zur Erstellung von PDF/UA verpflichtet? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">Seit dem 28. Juni 2025 greift das
+                            Barrierefreiheitsstärkungsgesetz (BFSG) für die Privatwirtschaft. Unternehmen im Bereich
+                            E-Commerce, Finanzen und Personenverkehr müssen ihre digitalen Produkte sowie Dokumente
+                            (AGB, Anleitungen, Verträge) barrierefrei bereitstellen. Während öffentliche Stellen schon
+                            länger durch die BITV 2.0 gebunden sind, ist die Umsetzung nun auch für viele private Firmen
+                            zwingend. Wir analysieren für Sie, wo bei Ihren Dokumenten Handlungsbedarf besteht.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-item-header">Können meine Mitarbeiter barrierefreie PDFs selbst erstellen? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">Theoretisch ja, praktisch meist nur mit erheblichem Zusatzaufwand
+                            und Spezialwissen. Ein einfacher PDF-Export aus Word oder InDesign reicht fast nie aus, um
+                            den strengen ISO-Standard 14289-1 (PDF/UA) zu erfüllen. Komplexe Elemente wie Tabellen,
+                            Fußnoten oder die korrekte Lesereihenfolge für Screenreader müssen manuell „getaggt“ werden.
+                            Wir übernehmen diese technische Nacharbeit für Sie, damit Ihr Team sich auf die Inhalte
+                            konzentrieren kann.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-item-header">Wie hoch ist der Mehraufwand pro Dokument? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">Der Aufwand variiert stark nach Komplexität des Layouts. Ein
+                            simpler Brief ist schneller barrierefrei als ein 50-seitiger Geschäftsbericht mit
+                            verschachtelten Tabellen und Infografiken. Durch unsere spezialisierten Workflows und
+                            Profi-Tools können wir die Erstellung jedoch deutlich schneller und kosteneffizienter
+                            umsetzen, als wenn Sie intern mühsam manuell nacharbeiten. Kontaktieren Sie uns für ein
+                            unverbindliches Angebot pro Dokumententyp.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-item-header">Was mache ich mit meinem Bestand an alten Dokumenten (Alt-PDFs)? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">Hier ist eine Strategie gefragt. Nicht jedes alte Dokument muss
+                            zwingend sofort umgewandelt werden, aber Dokumente, die weiterhin aktiv genutzt werden (z.
+                            B. Formulare oder Anleitungen), sollten priorisiert werden. Wir bieten einen Bestands-Check
+                            an: Wir analysieren Ihr Archiv und entscheiden gemeinsam, welche Dokumente wir per
+                            „Remediation“ (nachträgliche Barrierefrei-Machung) fit für die Zukunft machen.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-item-header">Wie sicher ist die Prüfung der Barrierefreiheit? <i
+                            class="fas fa-chevron-down"></i></div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">Wir verlassen uns nicht auf Bauchgefühl. Jedes von uns erstellte
+                            Dokument wird nach dem international anerkannten Matterhorn-Protokoll geprüft. Wir nutzen
+                            Validierungstools wie den PAC (PDF Accessibility Checker) und führen zusätzlich manuelle
+                            Prüfungen der Lesereihenfolge und Alternativtexte durch. Sie erhalten von uns Dokumente, die
+                            technisch zu 100 % konform sind.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-item-header">Welchen Vorteil habe ich durch PDF/UA außer der gesetzlichen Pflicht?
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-content">
+                        <div class="faq-content-inner">
+                            <p>Barrierefreie Dokumente sind einfach bessere Dokumente.</p>
+                            <ul style="margin-left: 20px; margin-top: 10px;">
+                                <li><strong>SEO:</strong> Suchmaschinen können getaggte PDFs besser auslesen, was Ihr
+                                    Ranking verbessert.</li>
+                                <li><strong>Mobile Nutzung:</strong> Auf Smartphones lassen sich PDF/UA-Dokumente oft
+                                    besser skalieren und lesen.</li>
+                                <li><strong>Nachhaltigkeit:</strong> Strukturierte Daten sind leichter maschinenlesbar,
+                                    was für zukünftige KI-Anwendungen in Ihrem Unternehmen essenziell ist. Zudem zeigen
+                                    Sie soziale Verantwortung (CSR), was Ihr Image bei Kunden und Bewerbern stärkt.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="cta reveal" id="kontakt">
+        <div class="cta-box">
+            <h2>Bereit für den Standard der Zukunft?</h2>
+            <p>Senden Sie uns ein Test-Dokument zur Prüfung oder kontaktieren Sie uns für eine kostenlose
+                Ersteinschätzung zur Barrierefreiheit Ihrer Inhalte.</p>
+            <a href="mailto:info@tag2ua.com" class="btn btn-white">Kontakt</a>
+        </div>
+    </div>
+
+    <button id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <footer>
+        <div class="footer-logo">
+            <img src="logo.png" alt="Tag2UA Logo">
+        </div>
+        <div class="footer-nav">
+            <a href="index.html">Startseite</a>
+            <a href="Impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+        </div>
+        <div style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
+            <p style="font-size: 0.9rem;">Informationen zugänglich machen &copy; 2026 Tag2UA</p>
+            <p style="font-size: 0.8rem; margin-top: 5px; opacity: 0.4;"></p>
+        </div>
+    </footer>
+
+    <script>
+        // Header Scroll Effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('mainHeader');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // FAQ accordion
+        const faqItems = document.querySelectorAll('.faq-item');
+        faqItems.forEach(item => {
+            const header = item.querySelector('.faq-item-header');
+            header.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                faqItems.forEach(i => i.classList.remove('active'));
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Back to Top button
+        const backToTopBtn = document.getElementById('backToTop');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Intersection Observer for Reveal
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+
+</html>
