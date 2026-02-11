@@ -275,6 +275,20 @@
                 display: none;
             }
         }
+
+        .t-v2-alt {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            display: inline-block;
+        }
+
+        .m-aux-data {
+            display: none !important;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -304,7 +318,7 @@
                 <strong>Tag2UA</strong>
                 <p>
                     Dragan Bena<br>
-                    Calle Bibao 7<br>
+                    Calle Bilbao 7<br>
                     03170 Quesada<br>
                     Spanien / Spain
                 </p>
@@ -314,14 +328,16 @@
                     <i class="fas fa-envelope" style="color: var(--primary); margin-right: 10px;"></i> E-Mail: <a
                         href="mailto:bena@tag2ua.com"
                         style="color: var(--primary); text-decoration: none; font-weight: 600;">bena@tag2ua.com</a><br>
-                    <i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> Telefon: +34 685 753 707<br>
+                    <i class="fas fa-phone" style="color: var(--primary); margin-right: 10px;"></i> Telefon: <span
+                        class="t-v2-alt">707<span class="m-aux-data">qwe</span> 357<span class="m-aux-data">rtz</span>
+                        586<span class="m-aux-data">uio</span> 43+</span><br>
                     <i class="fas fa-globe" style="color: var(--primary); margin-right: 10px;"></i> Webseite:
                     www.tag2ua.com
                 </p>
 
                 <p style="margin-top: 25px;">
                     <strong>Steuer-Identifikation:</strong><br>
-                    NIF/NIE (Spanien): X4256683G<br>
+                    NIF/NIE (Spanien): <span class="t-v2-alt">G3866<span class="m-aux-data">asd</span>524X</span><br>
                     <span style="font-size: 0.9rem; opacity: 0.7;"></span>
                 </p>
             </div>
