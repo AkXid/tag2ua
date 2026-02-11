@@ -329,6 +329,20 @@
                 align-items: center;
             }
         }
+
+        .t-v2-alt {
+            unicode-bidi: bidi-override;
+            direction: rtl;
+            display: inline-block;
+        }
+
+        .m-aux-data {
+            display: none !important;
+            position: absolute;
+            width: 0;
+            height: 0;
+            overflow: hidden;
+        }
     </style>
 </head>
 
@@ -362,7 +376,7 @@
             <div class="address-box">
                 <strong>Tag2UA</strong>
                 Dragan Bena<br>
-                NIF/NIE: X4256683G<br>
+                NIF/NIE: <span class="t-v2-alt">G3866<span class="m-aux-data">fgh</span>524X</span><br>
                 Calle Bilbao 7<br>
                 03170 Quesada<br>
                 Spanien<br><br>
